@@ -22,6 +22,11 @@ server.get('/movies', (req, res) => {
   };
   res.json(response);
 });
+server.get('/movie/:movieId', (req, res) => {
+  console.log('url=', req.params);
+  const findMovie = movies.find((movie) => movie.id === req.params.movieId);
+  console.log('movieId', findMovie);
+});
 
 const staticServerPathWeb = './src/public-react'; // En esta carpeta ponemos los ficheros estáticos
 server.use(express.static(staticServerPathWeb));
