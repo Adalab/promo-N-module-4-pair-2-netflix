@@ -35,6 +35,18 @@ server.get('/movie/:movieId', (req, res) => {
   console.log('movieId', findMovie);
 });
 
+//Endpoint para registro de usuaria
+server.post('/signup', (req, res) => {
+  console.log('registro=', req.body);
+  // if (!req.body.userEmail || !req.body.userPass) {
+  //   res.sendStatus(404);
+  // } else {
+  //   res.json({
+  //     success: true,
+  //   })
+  // }
+});
+
 const staticServerPathWeb = './src/public-react'; // En esta carpeta ponemos los ficheros estáticos
 server.use(express.static(staticServerPathWeb));
 
