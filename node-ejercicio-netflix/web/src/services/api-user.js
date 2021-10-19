@@ -80,24 +80,15 @@ const getUserMoviesFromApi = (userId) => {
     userId
   );
   // CAMBIA ESTE FETCH PARA QUE APUNTE A UN ENDPOINT DE TU SERVIDOR, PIENSA SI DEBE SER GET O POST, PIENSA QUÉ DATOS DEBES ENVIAR, ETC
-  return fetch(
-    '//beta.adalab.es/curso-intensivo-fullstack-recursos/apis/netflix-v1/empty.json'
-  )
+  return fetch('/localhost:400/user/movies', {
+    method: 'GET',
+    headers: {
+      'user-id': '1',
+    },
+  })
     .then((response) => response.json())
-    .then(() => {
-      // CAMBIA EL CONTENIDO DE ESTE THEN PARA GESTIONAR LA RESPUESTA DEL SERVIDOR Y RETORNAR AL COMPONENTE APP LO QUE NECESITA
-      return {
-        success: true,
-        movies: [
-          {
-            id: 1,
-            title: 'Gambita de dama',
-            gender: 'Drama',
-            image:
-              '//beta.adalab.es/curso-intensivo-fullstack-recursos/apis/netflix-v1/images/gambito-de-dama.jpg',
-          },
-        ],
-      };
+    .then((data) => {
+      return data;
     });
 };
 
