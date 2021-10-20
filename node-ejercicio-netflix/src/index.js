@@ -48,7 +48,7 @@ server.use(express.static(staticServerPathWeb));
 // Endpoint para gestionar los errores 404
 server.get('*', (req, res) => {
   // Relativo a este directorio
-  const notFoundFileRelativePath = '../public-react/404-not-found.html';
+  const notFoundFileRelativePath = '../404-not-found.html';
   const notFoundFileAbsolutePath = path.join(
     __dirname,
     notFoundFileRelativePath
